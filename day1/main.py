@@ -15,20 +15,17 @@ def part1(numbers):
     return higher
 
 def part2(numbers):
-    newNumbers = []
-    counter = 0
-    sum = 0
+    increase = 0
+    max = numbers[0] + numbers[1] + numbers[2]
     length = len(numbers)
-    for number in numbers:
-        if counter < length:
-            if length - counter == 3:
-                newNumbers.append(sum)
-                sum = 0
-            else:
-                sum+=number
-        counter+=1
-
-    return part1(newNumbers)
+    for i in range(length):
+        if i  > length - 3:
+            break
+        current = numbers[i] + numbers[i + 1] + numbers[i + 2]
+        if current > max:
+            increase+=1
+        max = current
+    return increase
 
 
 def main():
