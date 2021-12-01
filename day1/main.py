@@ -16,11 +16,9 @@ def part1(numbers):
 
 def part2(numbers):
     increase = 0
-    max = numbers[0] + numbers[1] + numbers[2]
+    max = 0
     length = len(numbers)
-    for i in range(length):
-        if i  > length - 3:
-            break
+    for i in range(length - 3):
         current = numbers[i] + numbers[i + 1] + numbers[i + 2]
         if current > max:
             increase+=1
