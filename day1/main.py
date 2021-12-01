@@ -25,11 +25,19 @@ def part2(numbers):
         max = current
     return increase
 
+def part1v2(numbers):
+    return sum([x < y for x, y in zip(numbers[:-1], numbers[1:])])
+
+def part2v2(numbers):
+    return sum([x < y for x, y in zip(numbers[:-3], numbers[3:])])
 
 def main():
     numbers = read()
-    print(part1(numbers))
-    print(part2(numbers))
+    print("v1", part1(numbers))
+    print("v1", part2(numbers))
+    print("v2", part1v2(numbers))
+    print("v2", part2v2(numbers))
+
 
 
 if __name__ == "__main__":
