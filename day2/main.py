@@ -24,7 +24,6 @@ def part2(lines):
     aim = 0
     for l in lines:
         direction, value = l.split(' ', 1)
-        print("dir: ", direction, " val: ", value)
         if direction == "forward":
             position += int(value)
             depth += (aim*int(value))
@@ -32,7 +31,6 @@ def part2(lines):
             aim -= int(value)
         elif direction == "down":
             aim += int(value)
-        print(" p:", position, " a:", aim, " d:", depth)
     return position*depth
 
 def main():
